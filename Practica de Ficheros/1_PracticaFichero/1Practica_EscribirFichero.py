@@ -7,13 +7,15 @@ bucle = True
 # Obtenemos la ruta del directorio donde está el script
 directorio_script = os.path.dirname(os.path.abspath(__file__))
 
-# Construimos la ruta completa del archivo que queremos crear
-ruta_completa_archivo = os.path.join(directorio_script, "numeros.txt")
 # ----------------------------------------
 
 while bucle:
     try:
         num = int(input("Introduce un número entero: "))
+    
+        # Construimos la ruta completa del archivo que queremos crear
+        nombreArchivo = f"tabla-{num}.txt"
+        ruta_completa_archivo = os.path.join(directorio_script, nombreArchivo)
         
         # Usamos la nueva variable con la ruta completa
         with open(ruta_completa_archivo, "a") as archivo:
